@@ -18,21 +18,24 @@ export default function Visualizer(){
 
     return(
         <>
-            <div>
-                <label htmlFor="sorting_speed">Sorting speed</label>
-                <input id="sorting_speed" type="range" min="1" max="100" value={sorting_speed} onChange={(e) => set_sorting_speed(e.target.value)} />
-
-                <label htmlFor="number_of_items">Number of items to sort</label>
-                <input type="number" value={number_of_items} onChange={(e) => set_number_of_items(e.target.value)} />
+            <div className="inputs_cont">
+                <div className="input_item">
+                    <label htmlFor="sorting_speed">Visualization slowdown </label>
+                    <input id="sorting_speed" type="range" min="1" max="100" value={sorting_speed} onChange={(e) => set_sorting_speed(e.target.value)} />
+                </div>
+                
+                <div className="input_item">
+                    <label htmlFor="number_of_items">Number of items to sort </label>
+                    <input type="number" value={number_of_items} onChange={(e) => set_number_of_items(e.target.value)} />
+                </div>
             </div>
 
 
-            <div>
-                <button onClick={(e) => buble_sort([...cisla], set_cisla, sorting_speed)}>Buble sort</button>
-                <button onClick={(e) => selectionSort([...cisla], set_cisla, sorting_speed)}>Selection sort</button>
-                <button onClick={(e) => insertionSort([...cisla], set_cisla, sorting_speed)}>Insertion sort</button>
-
-                <button onClick={(e) => set_cisla(generate_numbers(number_of_items))}>Reset</button>
+            <div className="button_cont">
+                <button className="sorting_button" onClick={(e) => buble_sort([...cisla], set_cisla, sorting_speed)}>Buble sort</button>
+                <button className="sorting_button" onClick={(e) => selectionSort([...cisla], set_cisla, sorting_speed)}>Selection sort</button>
+                <button className="sorting_button" onClick={(e) => insertionSort([...cisla], set_cisla, sorting_speed)}>Insertion sort</button>
+                <button className="sorting_button" onClick={(e) => set_cisla(generate_numbers(number_of_items))}>Reset</button>
             </div>
 
             <div className="sort_cont">
