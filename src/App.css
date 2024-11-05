@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+
+.sort_cont{
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  padding: 50px;
+  transform: scaleY(-1)
+}
+
+
+.sort_item{
+  background-color: #61dafb;
+  border: 1px solid black;
+  width: 30px;
+}
